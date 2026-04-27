@@ -72,22 +72,23 @@ cd efficient-ml-lora-analysis
 ```
 pip install -r requirements.txt
 ```
-## ▶️ Running Experiments
+## 💡 Running on Google Colab (Recommended)
 
-All experiments are implemented as Jupyter notebooks.
+All experiments were conducted using **Google Colab GPUs**:
 
-### Steps:
+- T4 GPU for 1%, 5%, 10% experiments  
+- H100 GPU for 100% dataset experiments  
 
-1. Navigate to the `notebooks/` folder  
-2. Run the notebooks sequentially:
+To run:
 
-- `1pct-5pct-10pct.ipynb` → Small-scale experiments  
-- `amazon_polarity_100pct_head_only.ipynb`  
-- `amazon_polarity_100pct_lora.ipynb`  
-- `amazon_polarity_100pct_full_finetune.ipynb`  
-
-Each notebook corresponds to a specific method and dataset size.
-
+1. Upload the notebook to Google Colab OR open via GitHub
+2. Enable GPU:
+   Runtime → Change runtime type → GPU
+3. Install dependencies inside Colab:
+   ```python
+   !pip install -r requirements.txt
+   ```
+4. Run all cells sequentially
 ---
 
 ## 📊 Results and Outputs
