@@ -58,11 +58,14 @@ efficient-ml-lora-analysis/
 ---
 
 ## ⚙️ Setup Instructions
-
+### Environment
+```
+- Python 3.10+
+```
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/efficient-ml-lora-analysis.git
+git clone https://github.com/shritej21/efficient-ml-lora-analysis.git
 cd efficient-ml-lora-analysis
 ```
 2. Install dependencies:
