@@ -29,6 +29,7 @@ All experiments are conducted using **DistilBERT** on the **Amazon Polarity data
 ---
 
 ## 📂 Repository Structure
+```
 efficient-ml-lora-analysis/
 │
 ├── README.md
@@ -53,7 +54,7 @@ efficient-ml-lora-analysis/
 ├── report/
 │ └── final_report.pdf
 
-
+```
 ---
 
 ## ⚙️ Setup Instructions
