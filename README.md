@@ -1,6 +1,3 @@
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![Framework](https://img.shields.io/badge/PyTorch-Enabled-orange)
-![Status](https://img.shields.io/badge/Project-Complete-brightgreen)
 # CS-595 Final Project  
 ## LoRA vs Full Fine-Tuning vs Head-Only  
 ### A Practical Efficiency Analysis for Transformer Adaptation
