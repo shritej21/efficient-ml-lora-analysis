@@ -16,5 +16,5 @@ on DistilBERT for text classification.
 ```bash
 pip install -r requirements.txt
 ```
-###▶️ Run Experiments
+### ▶️ Run Experiments
 python run_experiments.py
