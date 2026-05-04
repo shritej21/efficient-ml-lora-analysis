@@ -85,19 +85,19 @@ Increasing LoRA rank slightly improves performance but increases cost.
 
 ---
 
-###🖥️ Environment
+### 🖥️ Environment
 Python 3.8+
 Google Colab (recommended)
 GPU (T4 / A100 preferred)
 
 ---
 
-###📌 Notes
+### 📌 Notes
 All results are reproducible using provided notebooks.
 Ensure GPU is enabled for faster execution.
 
 ---
 
-###👨‍💻 Author
+### 👨‍💻 Author
 Shritej Vasal
 Harsh Patel
