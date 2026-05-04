@@ -1,192 +1,100 @@
-# CS-595 Final Project  
-## LoRA vs Full Fine-Tuning vs Head-Only  
-### A Practical Efficiency Analysis for Transformer Adaptation
+# Efficient ML Systems Project  
+## Parameter-Efficient Fine-Tuning using LoRA
+
+### 📌 Overview
+This project evaluates different fine-tuning strategies for large language models on the Amazon Polarity dataset. The goal is to compare performance and efficiency across:
+
+- Head-only training  
+- LoRA (Low-Rank Adaptation) with ranks r = 4, 8, 16  
+- Full fine-tuning  
+
+We analyze these methods across multiple dataset sizes:
+- 1%
+- 5%
+- 10%
+- 100%
 
 ---
 
-## 📌 Project Type
-**Engineering / Measurement Study**
+### ⚙️ Methods Compared
+
+| Method        | Description |
+|--------------|------------|
+| Head-only    | Only classifier head is trained |
+| LoRA         | Parameter-efficient fine-tuning |
+| Full FT      | Entire model is fine-tuned |
 
 ---
 
-## 📊 Overview
+### 📊 Metrics Evaluated
 
-This project presents a systematic evaluation of three fine-tuning strategies for transformer models:
-
-- **Full Fine-Tuning (Full FT)**
-- **LoRA (Low-Rank Adaptation)**
-- **Head-Only Tuning**
-
-The goal is to analyze the **trade-offs between model performance and system efficiency**, focusing on:
-
-- Accuracy and Macro-F1
-- Training time
-- GPU memory usage
-- Number of trainable parameters
-
-All experiments are conducted using **DistilBERT** on the **Amazon Polarity dataset** across multiple data scales (1%, 5%, 10%, and 100%).
+- Accuracy  
+- F1 Score (Macro)  
+- Training Time  
+- Trainable Parameters  
+- GPU Memory Usage  
 
 ---
 
-## 📂 Repository Structure
+### 📁 Project Structure
 ```
-efficient-ml-lora-analysis/
-│
+├── organized_1pct_5pct_10pct.ipynb
+├── organized_amazon_polarity_100pct_head_only.ipynb
+├── organized_amazon_polarity_100pct_lora.ipynb
+├── organized_amazon_polarity_100pct_full_finetune.ipynb
+├── results_analysis.ipynb
+├── summaries.json
+├── final_results.csv
 ├── README.md
-├── requirements.txt
-│
-├── notebooks/
-│ ├── 1pct-5pct-10pct.ipynb
-│ ├── amazon_polarity_100pct_full_finetune.ipynb
-│ ├── amazon_polarity_100pct_head_only.ipynb
-│ └── amazon_polarity_100pct_lora.ipynb
-│
-├── data_outputs/
-│ └── summaries.json
-│
-├── results/
-│ ├── main_compare_f1.png
-│ ├── main_compare_train_time.png
-│ ├── memory_vs_split.png
-│ ├── f1_vs_time_scatter.png
-│ └── final_100pct_three_panel.png
-│
-├── report/
-│ └── final_report.pdf
-
+└── requirements.txt
 ```
+
 ---
 
-## ⚙️ Setup Instructions
-### Environment
-```
-- Python 3.10+
-```
-1. Clone the repository:
+### 🚀 How to Run
 
+1. Install dependencies:
 ```bash
-git clone https://github.com/shritej21/efficient-ml-lora-analysis.git
-cd efficient-ml-lora-analysis
-```
-2. Install dependencies:
-```
 pip install -r requirements.txt
 ```
-## 💡 Running on Google Colab (Recommended)
-
-All experiments were conducted using **Google Colab GPUs**:
-
-- T4 GPU for 1%, 5%, 10% experiments  
-- H100 GPU for 100% dataset experiments  
-
-To run:
-
-1. Upload the notebook to Google Colab OR open via GitHub
-2. Enable GPU:
-   Runtime → Change runtime type → GPU
-3. Install dependencies inside Colab:
-   ```python
-   !pip install -r requirements.txt
-   ```
-4. Run all cells sequentially
+2. Run experiments notebooks:
+Open and execute notebooks for each training method.
+3. Generate results:
+   Run results_analysis.ipynb to:
+      Convert results to DataFrame
+      Generate graphs
+      Save outputs
 ---
 
-## 📊 Results and Outputs
-
-All experimental results are aggregated in:
-```
-data_outputs/summaries.json
-```
-This file contains:
-
-- Training time (seconds)
-- Peak GPU memory usage (MB)
-- Accuracy
-- Macro-F1 score
-- Number of trainable parameters
-
-Generated plots are stored in:
-```
-results/
-```
+### 📈 Key Findings
+Full fine-tuning achieves the highest accuracy but is computationally expensive.
+LoRA achieves comparable performance with significantly fewer parameters.
+Head-only training is fastest but underperforms in accuracy.
 ---
 
-## 📈 Evaluation Metrics
+### 👉 Conclusion:
+LoRA provides the best trade-off between efficiency and performance.
+---
 
-We evaluate both performance and efficiency.
+### 🧠 Insights
+LoRA reduces trainable parameters by ~98% compared to full fine-tuning.
+Training time is significantly reduced with minimal accuracy loss.
+Increasing LoRA rank slightly improves performance but increases cost.
+---
 
-### Performance Metrics:
-- Accuracy  
-- Macro-F1 Score  
-
-### System Metrics:
-- Training Time  
-- GPU Memory Usage  
-- Trainable Parameters  
+###🖥️ Environment
+Python 3.8+
+Google Colab (recommended)
+GPU (T4 / A100 preferred)
 
 ---
 
-## 🔁 Reproducibility
-
-This project ensures reproducibility through:
-
-- Fixed dataset splits: **1%, 5%, 10%, 100%**  
-- Consistent training configuration (**2 epochs**)  
-- Same model across all experiments (**DistilBERT**)  
-- Unified evaluation metrics (**Macro-F1, Accuracy**)  
-- Centralized result storage (`summaries.json`)  
-
-### To reproduce results:
-
-1. Run the notebooks  
-2. Compare outputs with values in `summaries.json`  
+###📌 Notes
+All results are reproducible using provided notebooks.
+Ensure GPU is enabled for faster execution.
 
 ---
 
-## 🧠 Key Findings
-
-- **LoRA achieves near Full Fine-Tuning performance**  
-  - Within ~0.002–0.004 Macro-F1 difference  
-
-- **Significant efficiency gains**  
-  - ~1% trainable parameters vs 100% in Full FT  
-  - Up to ~6× faster training at full dataset scale  
-
-- **Head-only tuning**  
-  - Most efficient  
-  - But significantly lower performance  
-
-- **Best trade-off**  
-  - LoRA provides the optimal balance between performance and efficiency  
-
----
-
-## ⚠️ Notes
-
-- Experiments on **1%, 5%, and 10%** were conducted on a **T4 GPU**  
-- **100% dataset experiments** were conducted on an **H100 GPU**  
-- Hardware differences may influence memory and runtime comparisons  
-
----
-
-## 📄 Report
-
-The complete project report is available at:
-```
-report/final_report.pdf
-```
-
----
-
-## 👥 Team
-
-- Shritej Vijay Vasal (A20586589)  
-- Harsh Patel (A20593019)  
-
----
-
-## 📌 Acknowledgements
-
-- HuggingFace Transformers  
-- PEFT (LoRA implementation)  
-- Amazon Polarity Dataset  
+###👨‍💻 Author
+Shritej Vasal
+Harsh Patel
