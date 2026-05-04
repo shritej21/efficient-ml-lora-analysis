@@ -38,13 +38,22 @@ We analyze these methods across multiple dataset sizes:
 
 ### 📁 Project Structure
 ```
-├── amazon_polarity_1pct_5pct_10pct.ipynb
-├── amazon_polarity_100pct_head_only.ipynb
-├── amazon_polarity_100pct_lora.ipynb
-├── amazon_polarity_100pct_full_finetune.ipynb
-├── results_analysis.ipynb
-├── summaries.json
-├── final_results.csv
+efficient-ml-lora-analysis/
+├── notebooks/
+│   ├── amazon_polarity_1pct_5pct_10pct.ipynb
+│   ├── amazon_polarity_100pct_head_only.ipynb
+│   ├── amazon_polarity_100pct_lora.ipynb
+│   ├── amazon_polarity_100pct_full_finetune.ipynb
+│   └── results_analysis.ipynb
+│
+├── results/
+│   ├── summaries.json
+│   └── final_results.csv
+│   # (optional: add generated graphs here)
+│
+├── report/
+│   └── final_report.pdf   # (if you upload later)
+│
 ├── README.md
 └── requirements.txt
 ```
