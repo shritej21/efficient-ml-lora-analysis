@@ -70,6 +70,7 @@ Open and execute notebooks for each training method.
 Full fine-tuning achieves the highest accuracy but is computationally expensive.
 LoRA achieves comparable performance with significantly fewer parameters.
 Head-only training is fastest but underperforms in accuracy.
+
 ---
 
 ### 👉 Conclusion:
