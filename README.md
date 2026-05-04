@@ -38,10 +38,10 @@ We analyze these methods across multiple dataset sizes:
 
 ### 📁 Project Structure
 ```
-├── organized_1pct_5pct_10pct.ipynb
-├── organized_amazon_polarity_100pct_head_only.ipynb
-├── organized_amazon_polarity_100pct_lora.ipynb
-├── organized_amazon_polarity_100pct_full_finetune.ipynb
+├── amazon_polarity_1pct_5pct_10pct.ipynb
+├── amazon_polarity_100pct_head_only.ipynb
+├── amazon_polarity_100pct_lora.ipynb
+├── amazon_polarity_100pct_full_finetune.ipynb
 ├── results_analysis.ipynb
 ├── summaries.json
 ├── final_results.csv
