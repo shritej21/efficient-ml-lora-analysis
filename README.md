@@ -74,12 +74,14 @@ Head-only training is fastest but underperforms in accuracy.
 
 ### 👉 Conclusion:
 LoRA provides the best trade-off between efficiency and performance.
+
 ---
 
 ### 🧠 Insights
 LoRA reduces trainable parameters by ~98% compared to full fine-tuning.
 Training time is significantly reduced with minimal accuracy loss.
 Increasing LoRA rank slightly improves performance but increases cost.
+
 ---
 
 ###🖥️ Environment
