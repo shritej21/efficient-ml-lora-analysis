@@ -1,11 +1,11 @@
 torch
 transformers
 datasets
-scikit-learn
-matplotlib
-seaborn
 peft
 accelerate
-numpy
+scikit-learn
 pandas
+numpy
+matplotlib
+seaborn
 tqdm
