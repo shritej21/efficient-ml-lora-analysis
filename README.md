@@ -45,15 +45,8 @@ efficient-ml-lora-analysis/
 │   ├── amazon_polarity_100pct_lora.ipynb
 │   ├── amazon_polarity_100pct_full_finetune.ipynb
 │   └── results_analysis.ipynb
-│
 ├── results/
 │   ├── summaries.json
-│   └── final_results.csv
-│   # (optional: add generated graphs here)
-│
-├── report/
-│   └── final_report.pdf   # (if you upload later)
-│
 ├── README.md
 └── requirements.txt
 ```
